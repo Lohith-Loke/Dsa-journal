@@ -29,7 +29,7 @@ class Solution:
 
 A = Solution()
 A.romanToInt("MCMXCIV")
-# A.romanToInt("VII")
+A.romanToInt("VII")
 # "III"
 # "LVIII"
 # "MCMXCIV"
