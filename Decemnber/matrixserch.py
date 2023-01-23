@@ -1,15 +1,15 @@
 class Solution:
     ## recursive approach 
-    def binaryserch(self,A,B,high,low):
+    def binary(self,A,B,high,low):
         mid=(high+low)//2
         if (high < low):
             return 0 
         if  A[mid] < B:
             ## ele is b/w mid and high 
-            return self.binaryserch(A,B,high,mid+1)            
+            return self.binary(A,B,high,mid+1)            
         if  A[mid] > B:
             ## ele is b/w low and mid 
-            return self.binaryserch(A,B,mid-1,low)
+            return self.binary(A,B,mid-1,low)
         if A[mid]==B:
             return 1 
     # @param A : list of list of integers
