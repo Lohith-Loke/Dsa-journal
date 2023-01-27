@@ -1,3 +1,4 @@
+#kadine
 # maxSumSubarray
 class Solution(object):
     def maxSubArray(self, A):

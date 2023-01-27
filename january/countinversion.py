@@ -7,7 +7,7 @@ def mergeSort(arr, n):
 # This Function will use MergeSort to count inversions
 
 def _mergeSort(arr, temp_arr, left, right):
-    
+
 	# A variable inv_count is used to store
 	# inversion counts in each recursive call
 
@@ -26,14 +26,12 @@ def _mergeSort(arr, temp_arr, left, right):
 		# It will calculate inversion
 		# counts in the left subarray
 
-		inv_count += _mergeSort(arr, temp_arr,
-								left, mid)
+		inv_count += _mergeSort(arr, temp_arr,left, mid)
 
 		# It will calculate inversion
 		# counts in right subarray
 
-		inv_count += _mergeSort(arr, temp_arr,
-								mid + 1, right)
+		inv_count += _mergeSort(arr, temp_arr,mid + 1, right)
 
 		# It will merge two subarrays in
 		# a sorted subarray
@@ -93,7 +91,7 @@ def merge(arr, temp_arr, left, mid, right):
 
 # Driver Code
 # Given array is
-arr = [1, 20, 6, 4, 5]
+arr = [1, 3, 2, 4]
 n = len(arr)
 result = mergeSort(arr, n)
 print("Number of inversions are", result)
