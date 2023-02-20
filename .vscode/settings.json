@@ -4,7 +4,7 @@
         "vector": "cpp",
         "iostream": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "disabled",
     "python.formatting.provider": "yapf",
     "python.analysis.typeCheckingMode": "basic"
 }
