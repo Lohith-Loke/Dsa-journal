@@ -1,67 +1,34 @@
-# Definition for singly-linked list.
-class ListNode(object):
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
 class Solution(object):
-    def mergeTwoLists(self, list1, list2):
+    def majorityElement(self, nums):
         """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
+        :type nums: List[int]
+        :rtype: int
         """
-        head= None
-        if list1:
-            if list2:
-                if list1.val <list2.val:
-                    head = list1
-                    list1=list1.next
-                else:
-                    head= list2
-                    list2=list2.next
+        nums.sort()
+        mid = len(nums)//2
+        ctr1=0
+        ctr2=0 
+        ctr3=0 
+        for i in range(len(nums)):
+            if nums[i]==nums[mid-1]:
+                ctr1+=1
             else:
-                # list 2 is null
-                head=None
+                if nums[i]==nums[mid]:
+                    ctr2+=1
+                else:
+                    if nums[i]==nums[mid+1]:
+                     ctr3+=1
+        if ctr1 >= len(nums) +1// 2:
+            return nums[mid - 1]
         else:
-            if list2:
-                head=list2
-                list2=list2.next
+            if ctr2 >= len(nums) / 2:
+                return nums[mid]
             else:
-                head=None
-        root = head
-
-        while True:
-            if list1:
-                if list2:
-                    if list1.val <list2.val:
-                        head.next = list1
-                        head= head.next
-                        list1=list1.next
-                    else:
-                        head.next = list2
-                        head= head.next
-                        list2=list2.next
-
-                else:
-                # list 2 is null
-                # list 1 and list 2 are empty
-                    head.next=list1
-                    head=head.next
-                    list1=list1.next
-            else:
-
-                if list2:
-                    head.next=list2
-                    head=head.next
-                    list2=list2.next
-                else:
-                    # both are null
-                    break
-        return root
-x=None
-y=ListNode(2,ListNode(5,ListNode(6)))
+                if ctr3 >= len(nums) / 2:
+                    return nums[mid + 1]
+        return -1
+arr=[3,2,3]
 a=Solution()
-z=a.mergeTwoLists(x,y)
-while z:
-    print(z.val)
-    z=z.next
+if 1:
+	print("hi")
+# print(x)
