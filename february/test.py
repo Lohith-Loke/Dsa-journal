@@ -1,28 +1,9 @@
-from functools import cmp_to_key
-
-arr=[3,30,34,5,9]
-
-def cmp_items(a, b):
-    if a[0] > b[0]:
-        if a>b:
-            return -1
-        else:
-            return 1
-    elif a[0] == b[0]:
-        if int(a+b)>int(b+a):
-            return -1
-        return 1
+def generate_subsequences(arr):
+    if len(arr) == 0:
+        return [[]]  # base case: empty array has one subsequence, which is the empty sequence
     else:
-        if a>b:
-            return 1
-        else:
-            return -1
-        
-
-cmp_items_py3 = cmp_to_key(cmp_items)
-for i in range(len(arr)):
-    arr[i]=str(arr[i])
-arr.sort(key=cmp_items_py3)
-res= "".join(i for i in arr )
-print(res)
-print("9534330")
+        subseqs_without_first = generate_subsequences(arr[1:])  # recursive call without first element
+        subseqs_with_first = [[arr[0]] + subseq for subseq in subseqs_without_first]  # add first element to each subsequence
+        return subseqs_without_first + subseqs_with_first  # combine the two sets of subsequences
+s="file"
+print(generate_subsequences(s))
