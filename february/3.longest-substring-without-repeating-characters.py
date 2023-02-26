@@ -27,3 +27,6 @@ class Solution(object):
         return maxlen
          
 # @lc code=end
+a=Solution()
+x=a.lengthOfLongestSubstring("bacadef")
+print(x)
