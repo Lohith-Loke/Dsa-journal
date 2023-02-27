@@ -17,6 +17,7 @@ class Solution(object):
             p=p*nums[i]
             pre.append(p)
         p=1
+        print(pre)
         for i in range(len(nums)-1,-1,-1):
             pre[i]=pre[i]*p
             p=p*nums[i]
@@ -26,4 +27,4 @@ class Solution(object):
 nums = [1,2,3,4]
 a=Solution()
 op=a.productExceptSelf(nums)
-print(op)
+# print(op)
