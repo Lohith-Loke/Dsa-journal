@@ -1,9 +1,20 @@
-def generate_subsequences(arr):
-    if len(arr) == 0:
-        return [[]]  # base case: empty array has one subsequence, which is the empty sequence
-    else:
-        subseqs_without_first = generate_subsequences(arr[1:])  # recursive call without first element
-        subseqs_with_first = [[arr[0]] + subseq for subseq in subseqs_without_first]  # add first element to each subsequence
-        return subseqs_without_first + subseqs_with_first  # combine the two sets of subsequences
-s="file"
-print(generate_subsequences(s))
+import heapq
+import math
+class Solution(object):
+    def pickGifts(self, gifts, k):
+        """
+        :type gifts: List[int]
+        :type k: int
+        :rtype: int
+        """
+        h=[]
+        for value in gifts:
+            heapq.heappush(h, -1*value)
+        for _ in range(k):
+            x=heapq.heappop(h)
+            heapq.heappush(h,-1*int(math.sqrt(x*-1)))
+            heapq.heapify(h)
+        return -1*sum(h)
+s=Solution()
+ans=s.pickGifts([25,64,9,4,100], 4)
+print(ans)

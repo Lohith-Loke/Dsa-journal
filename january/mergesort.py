@@ -35,6 +35,9 @@ def mergesort(arr):
     return invercount
 
 arr=[2, 4, 1, 3, 5]
+
+arr=[-2,3,-5]
+arr=[-1,2,-8,-10]
 print(arr)
 ic=mergesort(arr)
 print(arr)
